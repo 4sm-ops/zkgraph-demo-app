@@ -1,0 +1,623 @@
+[
+    {
+        "members": [
+            {
+                "name": "low",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "high",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "Uint256",
+        "size": 2,
+        "type": "struct"
+    },
+    {
+        "members": [
+            {
+                "name": "pub_count",
+                "offset": 0,
+                "type": "Uint256"
+            },
+            {
+                "name": "follow_module",
+                "offset": 2,
+                "type": "felt"
+            },
+            {
+                "name": "follow_nft",
+                "offset": 3,
+                "type": "felt"
+            },
+            {
+                "name": "handle",
+                "offset": 4,
+                "type": "felt"
+            },
+            {
+                "name": "image_uri",
+                "offset": 5,
+                "type": "felt"
+            },
+            {
+                "name": "follow_nft_uri",
+                "offset": 6,
+                "type": "felt"
+            }
+        ],
+        "name": "ProfileStruct",
+        "size": 7,
+        "type": "struct"
+    },
+    {
+        "members": [
+            {
+                "name": "to",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "handle",
+                "offset": 1,
+                "type": "felt"
+            },
+            {
+                "name": "image_uri",
+                "offset": 2,
+                "type": "felt"
+            },
+            {
+                "name": "follow_module",
+                "offset": 3,
+                "type": "felt"
+            },
+            {
+                "name": "follow_module_init_data",
+                "offset": 4,
+                "type": "felt"
+            },
+            {
+                "name": "follow_nft_uri",
+                "offset": 5,
+                "type": "felt"
+            }
+        ],
+        "name": "CreateProfileData",
+        "size": 6,
+        "type": "struct"
+    },
+    {
+        "data": [
+            {
+                "name": "from_",
+                "type": "felt"
+            },
+            {
+                "name": "to",
+                "type": "felt"
+            },
+            {
+                "name": "tokenId",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "Transfer",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "owner",
+                "type": "felt"
+            },
+            {
+                "name": "approved",
+                "type": "felt"
+            },
+            {
+                "name": "tokenId",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "Approval",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "owner",
+                "type": "felt"
+            },
+            {
+                "name": "operator",
+                "type": "felt"
+            },
+            {
+                "name": "approved",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "ApprovalForAll",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            },
+            {
+                "name": "sender",
+                "type": "felt"
+            },
+            {
+                "name": "to",
+                "type": "felt"
+            },
+            {
+                "name": "handle",
+                "type": "felt"
+            },
+            {
+                "name": "image_uri",
+                "type": "felt"
+            },
+            {
+                "name": "follow_module",
+                "type": "felt"
+            },
+            {
+                "name": "follow_module_return_data",
+                "type": "felt"
+            },
+            {
+                "name": "follow_nft_uri",
+                "type": "felt"
+            },
+            {
+                "name": "timestamp",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "ProfileCreated",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            },
+            {
+                "name": "follow_module",
+                "type": "felt"
+            },
+            {
+                "name": "follow_module_return_data",
+                "type": "felt"
+            },
+            {
+                "name": "timestamp",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "FollowModuleSet",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            },
+            {
+                "name": "publication_id",
+                "type": "Uint256"
+            },
+            {
+                "name": "content_uri",
+                "type": "felt"
+            },
+            {
+                "name": "timestamp",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "PostCreated",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "get_profile_by_id",
+        "outputs": [
+            {
+                "name": "profile",
+                "type": "ProfileStruct"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            },
+            {
+                "name": "element",
+                "type": "felt"
+            }
+        ],
+        "name": "get_profile_element_by_id",
+        "outputs": [
+            {
+                "name": "profile",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "handle_hash",
+                "type": "felt"
+            }
+        ],
+        "name": "get_profile_by_hh",
+        "outputs": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "data": [
+            {
+                "name": "follower",
+                "type": "felt"
+            },
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            },
+            {
+                "name": "folow_module_data",
+                "type": "felt"
+            },
+            {
+                "name": "timestamp",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "Followed",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "profile_id",
+                "type": "felt"
+            },
+            {
+                "name": "follow_nft",
+                "type": "felt"
+            },
+            {
+                "name": "timestamp",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "FollowNFTDeployed",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "previousOwner",
+                "type": "felt"
+            },
+            {
+                "name": "newOwner",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "OwnershipTransferred",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "getOwner",
+        "outputs": [
+            {
+                "name": "owner",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "interface_id",
+                "type": "felt"
+            }
+        ],
+        "name": "supportsInterface",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name": "name",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "name": "symbol",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "owner",
+                "type": "felt"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "balance",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "token_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "ownerOf",
+        "outputs": [
+            {
+                "name": "owner",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "token_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "getApproved",
+        "outputs": [
+            {
+                "name": "approved",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "owner",
+                "type": "felt"
+            },
+            {
+                "name": "operator",
+                "type": "felt"
+            }
+        ],
+        "name": "isApprovedForAll",
+        "outputs": [
+            {
+                "name": "is_approved",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "token_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "tokenURI",
+        "outputs": [
+            {
+                "name": "token_uri_len",
+                "type": "felt"
+            },
+            {
+                "name": "token_uri",
+                "type": "felt*"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "data": [
+            {
+                "name": "name",
+                "type": "felt"
+            },
+            {
+                "name": "symbol",
+                "type": "felt"
+            },
+            {
+                "name": "timestamp",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "BaseInitialized",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "name": "name",
+                "type": "felt"
+            },
+            {
+                "name": "symbol",
+                "type": "felt"
+            },
+            {
+                "name": "owner",
+                "type": "felt"
+            },
+            {
+                "name": "_follow_nft",
+                "type": "felt"
+            },
+            {
+                "name": "token_uri_len",
+                "type": "felt"
+            },
+            {
+                "name": "token_uri",
+                "type": "felt*"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "name": "create_profile_data",
+                "type": "CreateProfileData"
+            }
+        ],
+        "name": "create_profile",
+        "outputs": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "_from",
+                "type": "felt"
+            },
+            {
+                "name": "to",
+                "type": "felt"
+            },
+            {
+                "name": "token_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "transferFrom",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "to",
+                "type": "felt"
+            },
+            {
+                "name": "token_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "approve",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "operator",
+                "type": "felt"
+            },
+            {
+                "name": "approved",
+                "type": "felt"
+            }
+        ],
+        "name": "setApprovalForAll",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "profile_id",
+                "type": "Uint256"
+            }
+        ],
+        "name": "follow",
+        "outputs": [],
+        "type": "function"
+    }
+]
