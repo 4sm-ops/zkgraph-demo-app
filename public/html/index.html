@@ -34,13 +34,12 @@
 
 		function draw() {
 			var config = {
-
-				containerId: "viz",
-				neo4j: {
-					serverUrl: "neo4j+s://4cde2fb0.databases.neo4j.io",
-					serverUser: "neo4j",
-					serverPassword: "AimWfzEotHVN9vppoXsoehpbnO1q4EPEofPaH6PXjuY"
-				},
+				encrypted:"ENCRYPTION_ON",
+        		trust: "TRUST_SYSTEM_CA_SIGNED_CERTIFICATES",
+        		container_id: "viz",
+       			server_url: "neo4j://4cde2fb0.databases.neo4j.io",
+				server_user: "neo4j",
+				server_password: "AimWfzEotHVN9vppoXsoehpbnO1q4EPEofPaH6PXjuY",
 				labels: {
 					ProfileID: {
 						caption: "handle",
