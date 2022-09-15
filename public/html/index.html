@@ -44,7 +44,13 @@
 					"ProfileID": {
 						"caption": "handle",
 					}
+
 				},
+
+				relationships: {
+ 					"FOLLOWS": {
+ 						"caption": false}
+ 					},
 				initial_cypher: "MATCH (n:ProfileID) RETURN n LIMIT 150"
 			};
 
