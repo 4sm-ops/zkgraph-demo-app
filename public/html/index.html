@@ -50,7 +50,9 @@
  					"FOLLOWS": {
  						"caption": false}
  					},
-				initial_cypher: "MATCH p=()-[r:FOLLOWS]->() RETURN p LIMIT 150"
+//				initial_cypher: "MATCH p=()-[r:FOLLOWS]->() RETURN p LIMIT 150"
+
+				initial_cypher: "MATCH p=()-->() RETURN p LIMIT 300"
 			};
 
 			viz = new NeoVis.default(config);
