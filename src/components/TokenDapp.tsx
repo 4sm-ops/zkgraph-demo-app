@@ -21,6 +21,7 @@ import {
   waitForTransaction,
 } from "../services/wallet.service"
 import styles from "../styles/Home.module.css"
+import Neo4j from "./Neo4j"
 
 type Status = "idle" | "approve" | "pending" | "success" | "failure"
 
@@ -281,85 +282,9 @@ export const TokenDapp: FC<{
           <input type="submit" disabled={buttonsDisabled} value="Follow Profile ID" />
         </form>
       </div>
+      <Neo4j />
 
-      <div className="columns">
-        <form onSubmit={handleMintSubmit}>
-          <h2 className={styles.title}>Mint token</h2>
-
-          <label htmlFor="mint-amount">Amount</label>
-          <input
-            type="text"
-            id="mint-amount"
-            name="fname"
-            value={mintAmount}
-            onChange={(e) => setMintAmount(e.target.value)}
-          />
-
-          <input type="submit" disabled={buttonsDisabled} value="Mint" />
-        </form>
-
-        <form onSubmit={handleTransferSubmit}>
-          <h2 className={styles.title}>Transfer token</h2>
-
-          <label htmlFor="transfer-to">To</label>
-          <input
-            type="text"
-            id="transfer-to"
-            name="fname"
-            value={transferTo}
-            onChange={(e) => setTransferTo(e.target.value)}
-          />
-
-          <label htmlFor="transfer-amount">Amount</label>
-          <input
-            type="text"
-            id="transfer-amount"
-            name="fname"
-            value={transferAmount}
-            onChange={(e) => setTransferAmount(e.target.value)}
-          />
-          <br />
-          <input type="submit" disabled={buttonsDisabled} value="Transfer" />
-        </form>
-      </div>
-      <div className="columns">
-        <form onSubmit={handleSignSubmit}>
-          <h2 className={styles.title}>Sign Message</h2>
-
-          <label htmlFor="mint-amount">Short Text</label>
-          <input
-            type="text"
-            id="short-text"
-            name="short-text"
-            value={shortText}
-            onChange={(e) => setShortText(e.target.value)}
-          />
-
-          <input type="submit" value="Sign" />
-        </form>
-        <form>
-          <h2 className={styles.title}>Sign results</h2>
-
-          {/* Label and textarea for value r */}
-          <label htmlFor="r">r</label>
-          <textarea
-            className={styles.textarea}
-            id="r"
-            name="r"
-            value={lastSig[0]}
-            readOnly
-          />
-          {/* Label and textarea for value s */}
-          <label htmlFor="s">s</label>
-          <textarea
-            className={styles.textarea}
-            id="s"
-            name="s"
-            value={lastSig[1]}
-            readOnly
-          />
-        </form>
-      </div>
+      
       {showSession && (
         <div className="columns">
           <form onSubmit={handleOpenSessionSubmit}>
