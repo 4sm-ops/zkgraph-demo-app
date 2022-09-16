@@ -45,11 +45,31 @@
 				    }
 					
 				},
+				visConfig: {
+					nodes: {
+						shape: 'dot',
+						fixed: false,
+						font: '12px arial black',
+						    scaling: {
+      							label: false
+    					},
+    					shadow: true
+
+					},
+					edges: {
+						arrows: {
+							to: {enabled: true}
+						},
+						physics: false,
+						smooth: {
+					      enabled: false
+					  },
+					},
+				},
 
 				labels: {
 					ProfileID: {
-						label: "handle",
-						shape: "circle"
+						label: "handle"
 					},
 									},
 		   		relationships: {
