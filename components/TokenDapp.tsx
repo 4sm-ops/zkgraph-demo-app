@@ -3,8 +3,8 @@ import { FC, useEffect, useState } from "react"
 import { Abi, AccountInterface, Contract } from "starknet"
 import { genKeyPair, getStarkKey } from "starknet/dist/utils/ellipticCurve"
 
-import Erc20Abi from "../../abi/ERC20.json"
-import { truncateAddress, truncateHex } from "../services/address.service"
+import Erc20Abi from "../abi/ERC20.json"
+import { truncateAddress, truncateHex } from "../src/services/address.service"
 import {
   getErc20TokenAddress,
   mintToken,
@@ -12,14 +12,14 @@ import {
   transfer,
   followProfile,
   createProfile
-} from "../services/token.service"
+} from "../src/services/token.service"
 import {
   addToken,
   getExplorerBaseUrl,
   networkId,
   signMessage,
   waitForTransaction,
-} from "../services/wallet.service"
+} from "../src/services/wallet.service"
 import styles from "../styles/Home.module.css"
 import Neo4j from "./Neo4j"
 
