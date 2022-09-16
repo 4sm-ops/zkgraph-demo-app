@@ -52,13 +52,9 @@
 					}
 
 				},
-				relationships: {
- 					"FOLLOWS": {
- 						"caption": false}
- 					},
 //				initial_cypher: "MATCH p=()-[r:FOLLOWS]->() RETURN p LIMIT 150"
 
-				initial_cypher: "MATCH p=()-->() RETURN p LIMIT 300"
+				initial_cypher: "MATCH (n:ProfileID) RETURN n LIMIT 150"
 			};
 
 			viz = new NeoVis.default(config);
