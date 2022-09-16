@@ -1,7 +1,7 @@
 function Neo4j() {
   return(
     <div className="Neo4j">
-      <iframe src="graph" width="900" height="700"></iframe>
+      <iframe src="api/graph" width="900" height="700"></iframe>
     </div>
   );
 }
