@@ -3,7 +3,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/graph',
+        source: '/graph',
 	destination: '/html/index.html',
       },
     ]
